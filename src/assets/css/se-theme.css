@@ -1,0 +1,109 @@
+/*
+Theme Name: se
+Description: Solutions_UI_v2.0.pdf
+Customer Experience Designers: Anton(as418d)
+*/
+
+/* ATT Branding Colors
+	ATT Blue				      #067AB4
+	ATT Blue Highlight	  #44C8F5
+	ATT Orange 				    #EF6F00
+	ATT Orange Highlight  #FCB314
+	ATT Dark Gray		      #333333
+	ATT Gray				      #666666
+*/
+
+/* ATT Branding Type (tags listed in style guide)
+	Omnes_ATT II Regular        h1, h2, p, .sub-header
+	Omnes_ATT II Italic         .info-text
+	Omnes_ATT II Medium         h3, .label-text, Main Secondary Tertiary Navigation
+
+    NOTE: Where did tthe rest of the font faces go? 
+    They are not used anywhere in style guide, eventhough they are sepecified in into sheet.
+    So, not loading them.
+*/
+
+/* Omnes_ATT II Regular */
+@font-face {
+	font-family: 'Omnes ATT II';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../fonts/Omnes_ATTW02.eot?#iefix') format('eot'),
+    url('../fonts/Omnes_ATTW02.woff') format('woff'),
+    url('../fonts/Omnes_ATTW02.ttf') format('truetype'),
+    url('../fonts/Omnes_ATTW02.svg') format('svg');
+}
+
+/* Omnes_ATT II Italic */
+@font-face {
+	font-family: 'Omnes ATT II';
+	font-style: italic;
+	font-weight: normal;
+	src: url('../fonts/Omnes_ATTW02-Italic.eot?#iefix') format('eot'),
+    url('../fonts/Omnes_ATTW02-Italic.woff') format('woff'),
+    url('../fonts/Omnes_ATTW02-Italic.ttf') format('truetype'),
+    url('../fonts/Omnes_ATTW02-Italic.svg') format('svg');
+}
+
+/* Omnes_ATT II Medium */
+@font-face {
+	font-family: 'Omnes ATT II';
+	font-style: normal;
+	font-weight: bold;
+	src: url('../fonts/Omnes_ATTW02-Medium.eot?#iefix') format('eot'),
+    url('../fonts/Omnes_ATTW02-Medium.woff') format('woff'),
+    url('../fonts/Omnes_ATTW02-Medium.ttf') format('truetype'),
+    url('../fonts/Omnes_ATTW02-Medium.svg') format('svg');
+}
+
+.att-white {
+	color: #FFFFFF !important;
+}
+
+.att-blue {
+  color: #067AB4 !important;
+}
+
+.att-blue-dark {
+  color: #0568ae !important;
+}
+
+.att-blue-highlight {
+  color: #44C8F5 !important;
+}
+
+.att-orange {
+  color: #EF6F00 !important;
+}
+
+.att-orange-highlight {
+  color: #FCB314 !important;
+}
+
+.att-gray {
+  color: #666666 !important;
+}
+
+.att-gray-light {
+  color: #d2d2d2 !important;
+}
+
+.att-gray-dark {
+  color: #333333 !important;
+}
+
+.att-black {
+  color: #191919 !important;
+}
+
+.att-green {
+	color: #007b3e !important;
+}
+
+.att-red {
+	color: #cf292a !important;
+}
+
+.att-yellow {
+	color: #fdb71d !important;
+}

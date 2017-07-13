@@ -1,0 +1,56 @@
+//colors
+$color_cerulean_approx: #009fdb;
+$white: #fff;
+$color_quill_gray_approx: #d2d2d2;
+$color_mine_shaft_approx: #5a5a5a;
+$color_att_light_blue:  #71c5e8;
+
+#form-dropdown-button {
+  width: 100%;
+  background-color: #f8fcff !important;
+  /*color: $white;*/
+  font-size: 14px;
+  padding-right: 37px;
+  text-align: left;
+  border : 1px #d2d2d2 solid;
+
+  .chevron {
+    float: right;
+    position: absolute;
+    right: 0;
+    //padding: 6px 8px 3px 6px;
+    font-size:2.2em;
+    //border-left: 2px solid $white;
+    margin-top: -5px;
+  }
+
+  &.dropdown-toggle:after {
+    display: none;
+  }
+}
+
+.dropdown-menu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+    border-bottom: 1px solid $white;
+
+    li {
+      background-color: #f8fcff;
+      /*color: $color_mine_shaft_approx;*/
+      padding: 6px 21px;
+    }
+
+    li:hover {
+      color: $white;
+      background-color: $color_att_light_blue;
+      cursor: pointer;
+    }
+  }
+}

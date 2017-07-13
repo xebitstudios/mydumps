@@ -1,0 +1,44 @@
+<header>
+  <nav class="navbar topnav navbar-dark">
+    <div class="col-md-3">
+      <a  routerLink="/" routerLinkActive="active">
+        <div class="se-main-logo" se-svg="assets/images/sales_express_logo.svg"></div>
+      </a>
+    </div>
+    <div class="col-md-9">
+      <ul class="nav navbar-nav">
+        <li class="nav-item" *ngFor="let menu of menubarmodel">
+          
+          <a *ngIf="menu.routerLink" id="{{menu.id}}"  routerLink="{{menu.routerLink}}" class="nav-link glyphicon glyphicon-envelope" [class.active]="menu.active" (click)="hideSubmenu(menu)">
+            {{menu.label}}
+          </a> 
+
+          <a *ngIf="!menu.routerLink" id="{{menu.id}}" class="nav-link glyphicon glyphicon-envelope" [class.active]="menu.active" (mouseenter)="showSubmenu()" (click)="showSubmenu()">
+            {{menu.label}}
+          </a>
+          <ul class="submenu" [hidden]="!isVisible">
+            <li *ngFor="let menuItem of menu.menuItems">
+              <a (click)="hideSubmenu(menu)" routerLink="{{menuItem.routerLink}}" routerLinkActive="{{menuItem.routerLinkActive}}">
+                {{menuItem.label}}
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item user-profile-icon">
+          <a #menuUserProfile class="nav-link" [class.active]="userprofilemenu.active" (mouseenter)="showSubmenu()" (click)="showSubmenu()">
+            <div [style.background]="profileURL" class="avatar-icon"></div>
+            <!-- <div *ngIf="person" [ngStyle]="{'background': 'url(' + person.pictureURL + ')'}" class="avatar-icon"></div> -->
+            <img width="16" height="16" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEEAAAA0CAYAAADVGFU3AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AsRADoOh/RDtwAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAAu0lEQVRo3u3YsQ3CMBQG4XMwgZpNqClYgDFQpmAgRmACBqBgFSQQejR2mTDAu6uSMp8SKf4LQESsSVop5VMiYgvckxrsgHNtN3vyVod28U6MwICJIIIIIoggwgLCmNhg5WtgZmZmc5W2L16SPv8GuPaN8ZX4RTg5r8HXA5SnSBFEEEEEERYRUs9r/bf5kBSgAk+/BTMzM5ur/yxNSZ9/BG5ujG6MgBujR2kRRBBBBBH+IbgxAsekABV4/ADvMSbNOoPgUwAAAABJRU5ErkJggg==">
+          </a>
+          <ul class="submenu dropdown-menu-right" [hidden]="!isVisible">
+            <li *ngFor="let menuItem of userprofilemenu">
+              <a (click)="hideSubmenu(userprofilemenu)">
+                {{menuItem.label}}
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

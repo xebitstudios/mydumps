@@ -1,0 +1,53 @@
+.accordianParent{
+    font-size:15px;
+    text-decoration:none;
+    color:black !important;
+    .accordianLabel{
+        font-family: 'Omnes ATT II';
+        float:right;
+        width:90%;
+    }
+    .accordianListContainer{
+    padding:5px;
+        .checkboxContainer{
+        position: relative;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        vertical-align: middle;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background: #fff;
+            [type=checkbox]{
+                visibility:hidden;
+            }
+        }
+        .icon-checkmark{
+        font-size: 20px;
+        top: 3px;
+        left: 0;
+        color: #2489ce;
+        text-align: center;
+        }
+        .accordianListLabel{
+            margin-left:1em;
+        }
+    }
+ 
+}
+.aligningClearDiv{
+     padding-top:15px;
+ }
+.clearAllAccoridan{
+    color:#009fdb !important;
+    cursor:pointer;
+    font-size:15px;
+}
+.aligingAccordianColumn{
+    padding-left:0;
+}
+.iconExpandAndCollapse{
+    font-weight: bold;
+}
+
+ 

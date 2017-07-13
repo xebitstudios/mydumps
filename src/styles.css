@@ -1,0 +1,46 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'assets/vendor/bootstrap/css/bootstrap.min.css';
+@import 'assets/css/bootstrap-theme.css';
+@import 'assets/css/se-theme.css';
+/*@import 'assets/css/vendor-bootstrap.css';*/
+@import 'assets/css/msa-icon.css';
+@import 'assets/css/help-icon.css';
+
+@import 'assets/css/account-tspace.css';
+
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Omnes ATT II';
+}
+.d-flex{
+display:-webkit-box!important;
+display:-ms-flexbox!important;
+display:flex!important
+}
+.accordianParent .card{
+      border:none;
+}
+ .accordianParent .card-header {
+        background-color:inherit;
+        border-bottom:none;
+ }
+.accordianParent a,  a:focus, a:hover{
+         text-decoration:none;
+         color:black;
+         font-size:18px;
+         font-weight:bold;
+}
+.accordianParent .card-block{
+  padding-top:0;
+}
+.modal-backdrop.fade.show{
+   opacity: 0.2;
+   }
+.modal.fade.show{
+  opacity:1;
+}

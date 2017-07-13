@@ -1,0 +1,53 @@
+//colors
+$color_cerulean_approx: #009fdb;
+$white: #fff;
+$color_quill_gray_approx: #d2d2d2;
+$color_mine_shaft_approx: #5a5a5a;
+
+#dropdown-button {
+  width: 100%;
+  background-color: $color_cerulean_approx !important;
+  color: $white;
+  font-size: 14px;
+  padding-right: 37px;
+  text-align: left;
+
+  .chevron {
+    float: right;
+    position: absolute;
+    right: 0;
+    padding: 6px 8px 3px 6px;
+    border-left: 2px solid $white;
+    margin-top: -3px;
+  }
+
+  &.dropdown-toggle:after {
+    display: none;
+  }
+}
+
+.dropdown-menu {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+    border-bottom: 1px solid $white;
+
+    li {
+      background-color: $color_quill_gray_approx;
+      color: $color_mine_shaft_approx;
+      padding: 6px 21px;
+    }
+
+    li:hover {
+      color: $color_cerulean_approx;
+      background-color: $white;
+      cursor: pointer;
+    }
+  }
+}

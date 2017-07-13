@@ -1,0 +1,13 @@
+<template #saveSearchModal let-c="close" let-d="dismiss">
+	<div class="modal-header">
+
+		<h4 class="modal-title">{{ header }}</h4>
+	</div>
+	<div class="modal-body">
+		<p class="modal-subtitle">{{ subheader }}</p>
+		<ng-content></ng-content>
+	</div>
+	<div *ngFor="let buttonObject of footersButton" class="modal-footer">
+		<button *ngFor = "let button of buttonObject" (click)="d('actionbar-close')" class ="btn {{button.class}}">{{button.title}}</button>
+    </div>
+</template>

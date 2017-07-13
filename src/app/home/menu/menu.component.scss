@@ -1,0 +1,117 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+nav {
+  flex: 1;
+  background-color: #f2f2f2;
+  .menuHeader {
+    text-decoration: none;
+    padding-left: 35px;
+  }
+  .icon-arrow {
+    float: left;
+    color: #f2f2f2;
+    height: 55px;
+    font-size: 25px;
+    padding-top: 13px;
+    padding-left: 5px;
+    width: 15px;
+  }
+  >a {
+    // links inside nav
+    align-items: center;
+    padding: 15px 0 16px 20px;
+    background-color: #009fdb;
+    color: #f2f2f2;
+    font-weight: bold;
+    display: block;
+    padding-left: 35px;
+    &.active {
+      background-color: #009fdb;
+      color: #f2f2f2;
+      font-weight: bold;
+    }
+  }
+  ul {
+    // ul inside 1st level
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    a {
+      // links inside ul on 1st level
+      display: block;
+      height: 45px;
+      background-color: #009fdb;
+      text-decoration: none;
+      padding: 10px 0 11px 35px;
+      color: #fff;
+      &:hover {
+        background-color: #fff;
+        color: #009fdb;
+        font-weight: bold;
+      }
+      &.active {
+        background-color: #fff;
+        color: #009fdb;
+        font-weight: bold;
+      }
+    }
+  }
+  >ul {
+    // ul inside 2nd level
+    li {
+      background-color: #f2f2f2;
+      //      &:hover ul {
+      //        display: block;
+      //        max-height: 300px;
+      //      }
+      ul {
+        display: block;
+        max-height: 300px;
+      }
+    }
+    ul {
+      // ul inside 3rd level
+      overflow: hidden;
+      max-height: 0;
+      transition: all 0.5s ease-out;
+      a {
+        // links inside ul of 3rd level
+        background-color: #e6e6e6;
+        &:hover {
+          // on hover of secondary link - color change
+          background-color: #fff;
+        }
+        span {
+          padding-left: 15px;
+        }
+      }
+    }
+  }
+  // this will tell what the active page is
+  >ul.active {
+    ul {
+      // ul inside 3rd level
+      overflow: hidden;
+      max-height: 0;
+      transition: all 0.5s ease-out;
+      a {
+        // links inside ul of 3rd level
+        background-color: #e6e6e6;
+        &:hover {
+          // on hover of secondary link - color change
+          background-color: #fff;
+        }
+        span {
+          padding-left: 15px;
+        }
+      }
+      a.active {
+        background-color: #fff;
+      }
+    }
+  }
+}

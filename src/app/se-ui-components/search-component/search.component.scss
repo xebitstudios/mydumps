@@ -1,0 +1,41 @@
+.search{
+  display: flex;
+  font-size:20px;
+.searchBox {
+    float: left;
+    height: 35px;
+    padding: 1px 11px;
+    background-color: #f8fcff !important;
+    text-align: left;
+    border: 1px #d2d2d2 solid;
+    border-radius: .25rem;
+    color: #959595;
+    width:100%;
+  }
+  /* Fix for specific to IE11 */
+  .searchBox::-ms-clear {
+    display: none;
+    width: 0;
+    height: 0;
+  }
+  /* IE11 */
+  .searchIcon {
+    background-color: #009fdb;
+    width: auto;
+    height: auto;
+    color: #fff;
+    float: left;
+    border-radius: 0px 5px 5px 0px;
+    margin-left: -2px;
+    padding:0 10px;
+  }
+  .icon-accounts-tspace-search {
+    display: table;
+    margin: auto;
+    margin-top: 8px;
+  }
+  .icon-help-cross{
+    display:inline-block;
+    margin-top:7px;
+  }
+}

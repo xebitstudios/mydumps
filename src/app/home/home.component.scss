@@ -1,0 +1,104 @@
+.container-fluid {
+  margin-top: 10px;
+  .step-list-column{
+    max-width:450px;
+  }
+  .rowAlignment{
+    padding:20px 0;
+  }
+  .aligningDivSideNav{
+    padding-bottom:1.5em;
+    label{
+      font-size:18px;
+      font-weight:bold;
+    }
+    .btn-secondary{
+      color: #009fdb;
+    }
+    .aligningButtonInStepList{
+      width:100%;
+    }
+  }
+  .headerText{
+    color:#ea7400;
+    padding-left:15px;
+  }
+  
+  .aligingTableComponent{
+  padding:0 15px;
+    .btn-primary-home{
+      background-color:#ea7400;
+      color:#fff;
+      float:right;
+      }
+  }
+}
+
+.tabs-container {
+  margin-top: 10px;
+  border: 1px solid #dadada;
+  border-top: 0;
+
+  se-icon[name="gear"] {
+    float: right;
+    cursor: pointer;
+    padding: 10px 10px 5px 10px;
+  }
+}
+
+.carousel-image {
+  min-width: 100%;
+}
+
+// .tabs {
+//   >ul {
+//     @extend .bg-att-blue;
+//     background-color: #009FDB;
+//   }
+// }
+
+.list-group {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  min-height: 50px;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F8FCFF;
+  border: 2px solid #E6E8E9;
+  border-radius: 5px;
+  margin-bottom: 6px;
+  align-items: center;
+  font-size: 20px;
+  padding: 0 10px;
+
+  &:after {
+    // TODO include hamburger menu in icon font
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADMCAMAAAAI/LzAAAAAG1BMVEX///9ZWVlYWFheXl78/Pzv7+9iYmLMzMxnZ2dzJnAgAAAA50lEQVR4nO3d0U3FMBBFQUMgvP4rpglLe7SaqSDn11exzwEAAACAO34WOe+zxnue7zWe83ytIaZKTJWYKjFVYqrEVImpElMlpkpMlZgqMVViqrbFTB933/Ocz7vG5/wtMj3cAQAAAACwwO8iu/aZXTHT4909YqrEVImpElMlpkpMlZgqMVViqsRUiakSUyWmalvM9HH3Pctipgeim6aHOwAAAAAAFpi+kuimXRdPrdpnds2A059wj5gqMVViqsRUiakSUyWmSkyVmCoxVWKqxFSJqVr2Y8Oq58GnH1u/aXq4AwAAAGCNf93IeP3XyDSIAAAAAElFTkSuQmCC');
+    background-size: contain;
+    width: 16px;
+    height: 16px;
+    color: #959595;
+    content: ' ';
+  }
+}
+
+.modal-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 16px 0;
+
+  button {
+    flex: 1;
+    width: 45%;
+
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
+}
+

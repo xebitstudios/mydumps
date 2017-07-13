@@ -1,0 +1,42 @@
+<div class="container-fluid">
+    <div class = "row">
+        <div class="col-md-3 step-list-column">
+            <div class="aligningDivSideNav">
+                <label>Saved Searches</label>
+                <se-dropdown-menu [label]="['Please Select']" [values]="['here', 'there', 'new', 'few']" (change)="actionSourceChange($event)"></se-dropdown-menu>
+            </div>
+            <div class="aligningDivSideNav">
+                <label>Search Customers:</label>
+                <se-select-box [placeholder]='[SearchText]'></se-select-box>
+            </div>
+            <div class="aligningDivSideNav">
+                <ngbd-accordion-basic [accordianList]="[accordianList]"></ngbd-accordion-basic>
+            </div>
+            <div class="aligningDivSideNav">
+                <button class ="btn btn-secondary aligningButtonInStepList">Save Search</button>
+           </div>
+           <div class="aligningDivSideNav">
+                <button class ="btn btn-primary aligningButtonInStepList">Edit Advanced Search</button>
+           </div>
+       
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <div class="aligingTableComponent">
+                    <h2 class="headerText">Customer DB Search</h2>
+                    <hr/>
+                    <!--<div class="col-sm-3">
+                        <ngbd-datepicker-popup></ngbd-datepicker-popup>
+                    </div>  -->
+                    <div>Placeholder for table component</div>
+                     <hr/>
+                    <div class="aligningDivSideNav footerBotton">
+                         <button class ="btn btn-primary-home">Search Account</button>
+                    </div>
+                </div>
+             </div> 
+        </div>
+    </div>
+</div>
+
+

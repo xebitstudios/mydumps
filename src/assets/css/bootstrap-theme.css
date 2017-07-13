@@ -1,0 +1,183 @@
+/* Buttons */
+
+.btn-primary {
+    background-color: #009FDB;
+    border-color: #009FDB;
+}
+
+
+/* Tabs */
+
+.nav-tabs {
+    background-color: #009FDB;
+}
+
+.nav-tabs .nav-link {
+    max-width: 200px;
+    padding: 0.5em 2.5em;
+    border: 0;
+    border-right: 1px solid white;
+    border-radius: 0;
+    text-align: center;
+    font-family: 'Omnes ATT II';
+    font-size: 20px;
+    color: #fff;
+}
+
+.nav-tabs .nav-item+.nav-item {
+    margin-left: 0;
+}
+
+.nav-tabs .nav-link.active {
+    color: #009fdb !important;
+}
+
+.tab-content {
+    padding: 10px 10px 0 10px;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .tab-content {
+        padding: 5px 10px 0 10px;
+    }
+}
+
+
+/* Carousel */
+
+.carousel-control {
+    width: 5%;
+}
+
+.carousel-indicators {
+    bottom: -8px;
+    width: 10%;
+    margin-left: -5%;
+    z-index: 5;
+}
+
+.carousel-indicators li,
+.carousel-indicators li.active {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+}
+
+.carousel-indicators li.active {
+    box-shadow: 3px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-caption {
+    top: 0;
+    left: 5%;
+    right: initial;
+    text-align: initial;
+}
+
+.carousel-control.left,
+.carousel-control.right {
+    display: none;
+}
+
+.carousel-item,
+.carousel-item img {
+    cursor: pointer;
+}
+
+
+/* Dropdown Split */
+
+.btn-flex {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+.btn-flex .btn:first-child {
+    flex-grow: 1;
+}
+
+
+/* Modal */
+
+.modal-dialog {
+    margin-top: 80px;
+}
+
+.modal-header {
+    margin: 0 16px;
+    padding: 8px 4px 2px 4px;
+    color: #EF6F00;
+}
+
+.modal-footer {
+    margin: 0 16px;
+}
+
+.modal-footer .btn-primary,
+.modal-footer .btn-primary.active.focus,
+.modal-footer .btn-primary.active:focus,
+.modal-footer .btn-primary.active:hover,
+.modal-footer .btn-primary:active.focus,
+.modal-footer .btn-primary:active:focus,
+.modal-footer .btn-primary:active:hover {
+    background-color: #EF6F00;
+    border-color: #EF6F00;
+}
+
+.modal-tabs-configure .modal-dialog,
+.modal-widgets-configure .modal-dialog {
+    max-width: 290px !important;
+}
+
+.browsetSpacePopup .modal-content {
+    margin-top: 150px;
+}
+
+.postModalPopup .modal-content {
+    margin-top: 50px;
+}
+
+
+/****/
+
+footer a button {
+    outline: none !important;
+}
+
+a:not([href]):not([tabindex]) {
+    outline: none;
+}
+
+.btn-outline-primary:focus:hover {
+    background-color: #0275d8 !important;
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .btn-outline-primary:hover {
+        background-color: transparent !important;
+    }
+}
+
+/* iPad specific updates */
+@media only screen and (device-width: 768px) {
+    .nav-tabs .nav-link {
+        padding: 0.5em 1.5em;
+    }
+}
+
+/* Fix for specific to IE11 */
+@media all and (-ms-high-contrast:none) {
+     ::-ms-backdrop,
+    .tabs-container {
+        margin-bottom: 60px
+    }
+    /* IE11 */
+}
+
+/* browser resize updates */
+@media all and (max-width: 867px) {
+  .nav-tabs .nav-link {
+    padding: 0.5em 1.5em;
+  }
+}
