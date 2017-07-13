@@ -1,8 +1,0 @@
-:host {
-  padding: 8px;
-  background-color: limegreen;
-
-  & button {
-    padding: 32px;
-  }
-}
