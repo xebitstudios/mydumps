@@ -1,10 +1,10 @@
-import { PortalUiPage } from './app.po';
+import { ClickerPage } from './app.po';
 
-describe('portal-ui App', () => {
-  let page: PortalUiPage;
+describe('clicker App', () => {
+  let page: ClickerPage;
 
   beforeEach(() => {
-    page = new PortalUiPage();
+    page = new ClickerPage();
   });
 
   it('should display welcome message', () => {

@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class PortalUiPage {
+export class ClickerPage {
   navigateTo() {
     return browser.get('/');
   }

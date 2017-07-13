@@ -1,7 +1,0 @@
-<div class="search">
-    <input #term class="searchBox" (keyup)="search(term.value)" (keyup.enter)="onEnter(term.value)" value="{{terms}}" placeholder="{{placeholder}}">
-     <span class="searchIcon">
-        <span [class.icon-accounts-tspace-search]="!isSearched" [class.icon-help-cross]="isSearched" (click)="term.value ='';toSearchOnServer()"></span>
-
-    </span>
- </div>

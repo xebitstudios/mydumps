@@ -1,238 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <artifactId>salesexpressmsuidemo</artifactId>
+  <groupId>com.att.salesexpress.msui.customer</groupId>
+  <artifactId>customer</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-
-  <parent>
-    <groupId>com.att.ajsc</groupId>
-    <artifactId>sdk-java-starter-parent</artifactId>
-    <version>6.1.0.5</version>
-  </parent>
-
-  <name>Sales Express: MicroService UI</name>
-
-  <scm>
-    <url>https://codecloud.web.att.com/projects/ST_SALEXPMSUI/repos/salesexpressmsuidemo</url>
-    <connection>https://codecloud.web.att.com/projects/ST_SALEXPMSUI/repos/salesexpressmsuidemo</connection>
-    <developerConnection>https://codecloud.web.att.com/projects/ST_SALEXPMSUI/repos/salesexpressmsuidemo</developerConnection>
-  </scm>
-
-  <properties>
-    <swagger.directory>${basedir}/target/classes/META-INF/resources/swagger</swagger.directory>
-    <icd.file>service.json</icd.file>
-    <icd.package>com.att.salesexpress.ms.service.rs</icd.package>
-    <java.version>1.8</java.version>
-    <docker.registry>zlp11313.vci.att.com:5100</docker.registry>
-    <build.number>local</build.number>
-    <kube.namespace>com-att-salesexpress</kube.namespace>
-    <service.account>ajsc-svc-account</service.account>
-    <namespace>com.att.salesexpress</namespace>	
-    <sdk.java.camel.rest>6.2.0.7</sdk.java.camel.rest>
-    <springframework.version>4.3.4.RELEASE</springframework.version>
-    <project.scm.id>git-server</project.scm.id>
-    <camel.version>2.18.0</camel.version>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>com.att.ajsc</groupId>
-      <artifactId>sdk-java-camel-rest</artifactId>
-      <version>${sdk.java.camel.rest}</version>
-    </dependency>
-    <dependency>
-      <groupId>io.swagger</groupId>
-      <artifactId>swagger-core</artifactId>
-      <version>1.5.8</version>
-    </dependency>
-    <dependency>
-      <groupId>io.swagger</groupId>
-      <artifactId>swagger-annotations</artifactId>
-      <version>1.5.8</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.camel</groupId>
-      <artifactId>camel-velocity</artifactId>
-      <version>${camel.version}</version>
-    </dependency>
-  </dependencies>
+  <packaging>jar</packaging>
 
   <build>
-    <finalName>salesexpressmsuidemo</finalName>
-    <pluginManagement>
-      <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings 
-          only. It has no influence on the Maven build itself. -->
-        <plugin>
-          <groupId>org.eclipse.m2e</groupId>
-          <artifactId>lifecycle-mapping</artifactId>
-          <version>1.0.0</version>
-          <configuration>
-            <lifecycleMappingMetadata>
-              <pluginExecutions>
-                <pluginExecution>
-                  <pluginExecutionFilter>
-                    <groupId>com.github.kongchen</groupId>
-                    <artifactId>swagger-maven-plugin</artifactId>
-                    <versionRange>3.1.3</versionRange>
-                    <goals>
-                      <goal>generate</goal>
-                    </goals>
-                  </pluginExecutionFilter>
-                  <action>
-                    <ignore />
-                  </action>
-                </pluginExecution>
-              </pluginExecutions>
-            </lifecycleMappingMetadata>
-          </configuration>
-        </plugin>
-      </plugins>
-    </pluginManagement>
     <plugins>
       <plugin>
-        <groupId>com.github.kongchen</groupId>
-        <artifactId>swagger-maven-plugin</artifactId>
-        <configuration>
-          <apiSources>
-            <apiSource>
-              <locations>com.att.salesexpress.ms.service.rs</locations>
-              <basePath>/portal</basePath>
-              <info>
-                <title>${project.artifactId} Service</title>
-                <version>${project.version}</version>
-              </info>
-              <swaggerDirectory>${swagger.directory}</swaggerDirectory>
-            </apiSource>
-          </apiSources>
-        </configuration>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
         <executions>
           <execution>
-            <phase>compile</phase>
+            <id>copy-angular-dist</id>
+            <phase>process-classes</phase>
             <goals>
-              <goal>generate</goal>
+              <goal>copy-resources</goal>
             </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>com.spotify</groupId>
-        <artifactId>docker-maven-plugin</artifactId>
-        <version>0.4.11</version>
-        <configuration>
-          <imageName>${docker.registry}/com.att.salesexpress/salesexpressmsuidemo</imageName>
-          <dockerDirectory>src/main/docker</dockerDirectory>
-          <serverId>docker-hub</serverId>
-          <registryUrl>https://${docker.registry}</registryUrl>
-          <imageTags>
-            <imageTag>${project.version}</imageTag>
-            <imageTag>latest</imageTag>
-          </imageTags>
-          <forceTags>true</forceTags>
-          <resources>
-            <resource>
-              <targetPath>/</targetPath>
-              <directory>${project.build.directory}</directory>
-              <include>${project.build.finalName}.jar</include>
-            </resource>
-            <resource>
-              <targetPath>/</targetPath>
-              <directory>${project.build.directory}</directory>
-              <include>etc/config/*</include>
-            </resource>
-          </resources>
-        </configuration>
-      </plugin>
-      <!-- this plug in is set to true to skip unit test -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.19.1</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>sonar-maven-plugin</artifactId>
-        <version>2.5</version>
-        <executions>
-          <execution>
-            <phase>test</phase>
-            <goals>
-              <goal>sonar</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>properties-maven-plugin</artifactId>
-        <version>1.0.0</version>
-        <configuration>
-          <files>
-            <file>${project.basedir}/sonar-project.properties</file>
-          </files>
-        </configuration>
-        <executions>
-          <execution>
-            <id>read-sonar-properties</id>
-            <phase>initialize</phase>
-            <goals>
-              <goal>read-project-properties</goal>
-            </goals>
+            <configuration>
+              <outputDirectory>
+                ${project.basedir}/target/classes/META-INF/resources/webjars/${project.artifactId}/${project.version}
+              </outputDirectory>
+              <encoding>UTF-8</encoding>
+              <resources>
+                <resource>
+                  <directory>${project.basedir}/dist</directory>
+                  <includes>
+                    <include>**/*</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
           </execution>
         </executions>
       </plugin>
     </plugins>
-    <!-- mention the logback.xml location through system property or environment 
-      variable to edit logback.xml at run time -->
-    <resources>
-      <resource>
-        <directory>${project.basedir}/src/main/resources</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/*</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>${project.basedir}</directory>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/sonar-project.properties</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>${project.basedir}/etc</directory>
-        <targetPath>${project.basedir}/target/etc</targetPath>
-        <filtering>true</filtering>
-        <includes>
-          <include>**/*</include>
-        </includes>
-      </resource>
-    </resources>
   </build>
-
-  <repositories>
-    <repository>
-      <id>att-repository-releases</id>
-      <url>http://mavencentral.it.att.com:8084/nexus/content/repositories/att-repository-releases/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-    <repository>
-      <id>swm-releases</id>
-      <url>http://mavencentral.it.att.com:8084/nexus/content/repositories/swm-releases/</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>false</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
 
 </project>
