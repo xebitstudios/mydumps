@@ -8,7 +8,7 @@ metadata:
     app: "${APP_NAME}"
     version: "${VERSION:-0.0.1}"    
 spec:
-  replicas: 2
+  replicas: ${REPLICA_COUNT}
   selector:
     matchLabels:
       app: "${APP_NAME}"
@@ -18,6 +18,7 @@ spec:
       labels:
         app: "${APP_NAME}"
         version: "${VERSION:-0.0.1}"
+        build: "${BUILD_NUMBER:-undefined}"
     spec:
       serviceAccount: "${SERVICE_ACCOUNT:-default}"
       containers:
@@ -33,11 +34,4 @@ spec:
         ports:
         - containerPort: 8080
           protocol: TCP
-        resources:
-          requests:
-            memory: "500Mi"
-            cpu: "250m"
-          limits:
-            memory: "1Gi"
-            cpu: "500m"
       restartPolicy: Always

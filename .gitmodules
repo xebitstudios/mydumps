@@ -1,6 +1,0 @@
-[submodule "microservices/customer"]
-	path = microservices/customer
-	url = https://codecloud.web.att.com/scm/st_salexpmsui/customer
-[submodule "src/main/webapp/portal"]
-	path = src/main/webapp/portal
-	url = https://cl193g@codecloud.web.att.com/scm/st_salexpmsui/portal

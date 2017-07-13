@@ -4,8 +4,5 @@ kind: ConfigMap
 metadata:
   name: "${APP_NAME}"
   namespace: "${APP_NS:-default}"
-  labels:
-    app: "${APP_NAME}"
-    version: "${VERSION:-0.0.1}"
 data:
   config-env: dev

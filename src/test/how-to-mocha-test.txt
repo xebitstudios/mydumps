@@ -1,0 +1,2 @@
+C:\develop_branch_node_framework\demo0702\node_modules\.bin>mocha C:\develop_bra
+nch_node_framework\demo0702\src\test\CSIAuditLog_Test.js

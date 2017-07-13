@@ -1,0 +1,41 @@
+---
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: "${APP_NAME}"
+  namespace: "${APP_NS:-default}"
+  labels:
+    app: "${APP_NAME}"
+    env: "${TARGET_ENV:-dev}"
+spec:
+  replicas: 1
+  selector:
+    app: "${APP_NAME}"
+    env: "${TARGET_ENV:-dev}"
+  template:
+    metadata:
+      labels:
+        app: "${APP_NAME}"
+        env: "${TARGET_ENV:-dev}"
+    spec:
+      containers:
+      - env:
+        - name: ENV
+          valueFrom:
+            configMapKeyRef:
+              key: config-env
+              name: "${APP_NAME}-${TARGET_ENV:-dev}"
+        image: "${IMAGE_NAME}"
+        imagePullPolicy: Always
+        name: "${APP_NAME}"
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: "${RESOURCES_LIMITS_CPU:-2}"
+            memory: "${RESOURCES_LIMITS_MEMORY:-2Gi}"
+          requests:
+            cpu: "${RESOURCES_REQUESTS_CPU:-1}"
+            memory: "${RESOURCES_REQUESTS_MEMORY:-1288490188800m}"
+      restartPolicy: Always
